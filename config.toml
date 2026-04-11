@@ -1,0 +1,100 @@
+theme = "oxygen-x"
+
+[editor]
+trim-trailing-whitespace = true
+auto-pairs = false
+rulers = [80, 120]
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.whitespace]
+# render = "all"
+
+[editor.indent-guides]
+# render = true
+
+[keys.normal]
+q = "move_next_sub_word_start"
+
+D = "delete_selection_noyank"
+C = "change_selection_noyank"
+
+X = "extend_line_above"
+
+Y = "yank_to_clipboard"
+
+#h = "move_char_left"
+#j = "move_visual_line_up"
+#k = "move_visual_line_down"
+#l = "move_char_right"
+
+z = "copy_selection_on_next_line"
+Z = "copy_selection_on_prev_line"
+
+# These didn't seem to work in select mode. Do I need to create mapping for each of again, in concert with `v`?
+
+#H = "goto_line_start"
+#J = "goto_first_nonwhitespace"
+# K =
+#L = "goto_line_end"
+
+#C-h = "move_prev_word_start"
+#C-j = "move_prev_word_end"
+#C-k = "move_next_word_start"
+#C-l = "move_next_word_end"
+
+#C-H = "move_prev_long_word_start"
+#C-J = "move_prev_long_word_end"
+#C-K = "move_next_long_word_start"
+#C-L = "move_next_long_word_end"
+
+# Don't plan on using these. Just for consistency with regular j/k
+[keys.normal.g]
+j = "move_line_up"
+k = "move_line_down"
+
+
+[keys.normal.w]
+i = "@miw"
+a = "@maw"
+
+[keys.normal.W]
+i = "@miW"
+a = "@maW"
+
+[keys.normal."("]
+s = "@ms("
+r = "@mr("
+d = "@md("
+i = "@mi("
+a = "@ma("
+
+[keys.normal."["]
+s = "@ms["
+r = "@mr["
+d = "@md["
+i = "@mi["
+a = "@ma["
+
+[keys.normal."{"]
+s = "@ms{"
+r = "@mr{"
+d = "@md{"
+i = "@mi{"
+a = "@ma{"
+
+[keys.normal."\""]
+s = "@ms\""
+r = "@mr\""
+d = "@md\""
+i = "@mi\""
+a = "@ma\""
+
+[keys.normal."'"]
+s = "@ms'"
+r = "@mr'"
+d = "@md'"
+i = "@mi'"
+a = "@ma'"
+

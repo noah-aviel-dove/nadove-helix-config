@@ -1,0 +1,118 @@
+"attribute" = "white"
+
+"type" = "cyan"
+"type.builtin" = "cyan"
+"type.enum.variant" = "cyan"
+"constructor" = "cyan"
+
+"constant" = "white"
+"constant.character" = "light-red"
+"constant.character.escape" = "light-red"
+"constant.numeric" = "light-red"
+
+"string" = "light-green"
+"string.regexp" = "magenta"
+"string.special.symbol" = "light-red"
+
+"comment" = "gray"
+
+"variable" = "light-gray"
+"variable.builtin" = "white"
+"variable.other.member" = "light-blue"
+
+"label" = "light-red"
+
+"punctuation" = "gray"
+"punctuation.special" = "light-red"
+
+"keyword" = "light-cyan"
+"keyword.operator" = "light-blue"
+"keyword.function" = "light-magenta"
+"keyword.storage" = "light-magenta"
+"keyword.storage.modifier" = "magenta"
+
+"operator" = "light-blue"
+
+"function" = "light-blue"
+"function.macro" = "light-red"
+
+"tag" = "cyan"
+
+"namespace" = "light-gray"
+
+"special" = "light-red"
+
+"markup.heading" = "light-blue"
+"markup.heading.marker" = "light-gray"
+"markup.heading.1" = "light-blue"
+"markup.heading.2" = "light-cyan"
+"markup.heading.3" = "light-cyan"
+"markup.heading.4" = "green"
+"markup.heading.5" = "magenta"
+"markup.heading.6" = "light-red"
+"markup.list" = "light-blue"
+"markup.link.url" = "light-blue"
+"markup.link.text" = "cyan"
+"markup.quote" = "green"
+"markup.raw" = "cyan"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "light-blue"
+"diff.delta.moved" = "magenta"
+
+"ui.background" = { fg = "light-gray", bg = "black" }
+"ui.background.separator" = "gray"
+
+"ui.cursor" = { fg = "black", bg = "yellow" }
+"ui.cursor.match" = { fg = "black", bg = "yellow" }
+
+"ui.cursor.primary" = { fg = "black", bg = "light-yellow" }
+
+"ui.linenr" = "gray"
+"ui.linenr.selected" = "light-gray"
+
+"ui.statusline" = { fg = "light-gray", bg = "gray" }
+"ui.statusline.inactive" = { fg = "light-gray", bg = "gray" }
+"ui.statusline.normal" = { fg = "black", bg = "light-blue" }
+"ui.statusline.insert" = { fg = "black", bg = "light-green" }
+"ui.statusline.select" = { fg = "black", bg = "light-magenta" }
+
+"ui.popup" = { fg = "light-gray", bg = "gray" }
+"ui.popup.info" = { fg = "light-blue", bg = "gray" }
+"ui.window" = { fg = "gray" }
+"ui.help" = { fg = "light-gray", bg = "gray" }
+
+"ui.text" = "light-gray"
+"ui.text.focus" = { fg = "light-gray", bg = "gray" }
+"ui.text.inactive" = { fg = "light-gray" }
+"ui.text.info" = { fg = "light-blue" }
+
+"ui.virtual.ruler" = { bg = "gray" }
+"ui.virtual.whitespace" = "gray"
+"ui.virtual.indent-guide" = "gray"
+"ui.virtual.inlay-hint" = { fg = "light-gray", bg = "black" }
+"ui.virtual.jump-label" = { fg = "light-yellow", bg = "black" }
+
+"ui.selection" = { bg = "gray" }
+"ui.selection.primary" = { bg = "gray" }
+"ui.cursorline.primary" = { bg = "gray" }
+
+"ui.highlight" = { bg = "gray" }
+"ui.highlight.frameline" = { bg = "light-blue" }
+
+"ui.menu" = { fg = "light-gray", bg = "gray" }
+"ui.menu.selected" = { fg = "light-gray", bg = "gray" }
+"ui.menu.scroll" = { fg = "light-blue", bg = "gray" }
+
+"diagnostic" = "light-gray"
+"diagnostic.error" = { bg = "red" }
+"diagnostic.warning" = { bg = "light-yellow" }
+"diagnostic.info" = { bg = "blue" }
+"diagnostic.hint" = { bg = "blue" }
+
+"error" = "red"
+"warning" = "light-yellow"
+"info" = "light-blue"
+"hint" = "light-cyan"
+

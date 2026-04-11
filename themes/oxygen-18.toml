@@ -1,0 +1,176 @@
+"attribute" = { fg = "blue60", modifiers = ["italic"] }
+
+"type" = "cyan30"
+"type.builtin" = { fg = "cyan30", modifiers = ["bold"] }
+"type.parameter" = { fg = "cyan30", modifiers = ["italic"] }
+# This sucks, but the color specified for "type" seems to be used where these
+# ought to be (sometimes!), so I think is the best option for the sake of
+# consistency.
+"type.enum.variant" = "cyan30"
+"constructor" = { fg = "cyan30", modifiers = ["bold"] }
+
+"constant" = "gray80"
+"constant.builtin" = { fg = "gray80", modifiers = ["bold"] }
+"constant.character" = "magenta40"
+"constant.character.escape" = "magenta40"
+"constant.numeric" = "magenta40"
+
+"string" = "green40"
+"string.regexp" = "purple40"
+"string.special.symbol" = "magenta40"
+
+"comment" = { fg = "gray40", modifiers = ["italic"] }
+"comment.line.documentation" = { fg = "gray40", modifiers = ["italic", "bold"] }
+"comment.block.documentation" = { fg = "gray40", modifiers = ["italic", "bold"] }
+
+"variable" = "gray70"
+"variable.builtin" = { fg = "gray80", modifiers = ["bold", "italic"] }
+"variable.parameter" = { fg = "gray70", modifiers = ["italic"] }
+"variable.other.member" = { fg = "blue30", modifiers = ["italic"] }
+
+"label" = { fg = "magenta40", modifiers = ["italic"] }
+
+"punctuation" = "gray40"
+"punctuation.special" = "red30"
+
+"keyword" = { fg = "blue50", modifiers = ["bold"] }
+"keyword.operator" = {fg = "blue50", modifiers = ["bold"] }
+"keyword.function" = { fg = "purple40", modifiers = ["bold", "italic"] }
+"keyword.storage" = { fg = "purple40", modifiers = ["bold"] }
+"keyword.storage.type" = { fg = "purple40", modifiers = ["bold", "italic"] }
+"keyword.storage.modifier" = { fg = "purple40", modifiers = ["italic"] }
+
+"operator" = "blue50"
+
+"function" = { fg = "blue40", modifiers = ["bold"] }
+"function.builtin" = { fg = "blue40", modifiers = ["bold"] }
+"function.method" = { fg = "blue40", modifiers = ["bold"] }
+"function.macro" = { fg = "red30", modifiers = ["bold", "italic"] }
+
+"tag" = "cyan40"
+"tag.builtin" = { fg = "cyan40", modifiers = ["bold"] }
+
+# Having (nearly) the same color as variables is not ideal, but they're rendered the
+# same when name conflicts occur, so again I'm choosing to prioritize
+# consistency
+"namespace" = { fg = "gray60", modifiers = ["italic"] }
+
+"special" = "red30"
+
+"markup.heading" = { fg = "blue50", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "gray60", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "blue40", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "cyan40", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "cyan40", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "green40", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "purple40", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "magenta40", modifiers = ["bold"] }
+"markup.list" = "blue30"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue30", modifiers = ["underlined"] }
+"markup.link.text" = "cyan30"
+"markup.quote" = { fg = "green30", modifiers = ["italic"] }
+"markup.raw" = "cyan30"
+
+"diff.plus" = "green40"
+"diff.minus" = "red40"
+"diff.delta" = "blue40"
+"diff.delta.moved" = "purple40"
+
+"ui.background" = { fg = "gray70", bg = "gray10" }
+"ui.background.separator" = { fg = "gray30" }
+
+"ui.cursor" = { fg = "gray10", bg = "yellow40" }
+"ui.cursor.match" = { fg = "gray10", bg = "yellow40" }
+
+"ui.cursor.primary" = { fg = "gray10", bg = "yellow30" }
+
+"ui.linenr" = { fg = "gray40" }
+"ui.linenr.selected" = { fg = "gray70" }
+
+"ui.statusline" = { fg = "gray70", bg = "gray20" }
+"ui.statusline.inactive" = { fg = "gray50", bg = "gray20" }
+"ui.statusline.normal" = { fg = "gray10", bg = "blue50", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "gray10", bg = "green50", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "gray10", bg = "purple50", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "gray70", bg = "gray20" }
+"ui.popup.info" = { fg = "blue40", bg = "gray20" }
+"ui.window" = { fg = "gray30" }
+"ui.help" = { fg = "gray70", bg = "gray20" }
+
+"ui.text" = "gray70"
+"ui.text.focus" = { fg = "gray70", bg = "gray30", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "gray50" }
+"ui.text.info" = { fg = "blue40" }
+
+"ui.virtual.ruler" = { bg = "gray20" }
+"ui.virtual.gray80space" = "gray30"
+"ui.virtual.indent-guide" = "gray30"
+"ui.virtual.inlay-hint" = { fg = "gray50", bg = "gray10" }
+"ui.virtual.jump-label" = { fg = "yellow50", bg = "gray10" }
+
+"ui.selection" = { bg = "gray20" }
+"ui.selection.primary" = { bg = "gray30" }
+"ui.cursorline.primary" = { bg = "gray20" }
+
+"ui.highlight" = { bg = "gray30", modifiers = ["bold"] }
+"ui.highlight.frameline" = { bg = "blue20" }
+
+"ui.menu" = { fg = "gray70", bg = "gray20" }
+"ui.menu.selected" = { fg = "gray70", bg = "gray30", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "blue40", bg = "gray30" }
+
+"diagnostic" = "gray60"
+"diagnostic.error" = { underline = { color = "magenta30", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow30", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue40", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "cyan40", style = "curl" } }
+
+"error" = "magenta30"
+"warning" = "yellow30"
+"info" = "blue40"
+"hint" = "cyan40"
+
+[palette]
+gray10 = "#161616"
+gray20 = "#262626"
+gray30 = "#393939"
+gray40 = "#525252"
+gray50 = "#6F6F6F"
+gray60 = "#8D8D8D"
+gray70 = "#a8a8a8"
+gray80 = "#c8ccd4"
+
+blue20 = "#0043ce"
+blue30 = "#4589ff"
+blue40 = "#78a9ff"
+blue50 = "#82cfff"
+blue60 = "#bae6ff"
+
+cyan30 = "#08bdba"
+cyan40 = "#3ddbd9"
+cyan50 = "#9ef0f0"
+
+green30 = "#42be65"
+green40 = "#6fdc8c"
+green50 = "#a7f0ba"
+green60 = "#defbe6"
+
+magenta30 = "#ff7eb6"
+magenta40 = "#ff9ec7"
+magenta50 = "#ffd6e8"
+
+purple30 = "#a56eff"
+purple40 = "#be95ff"
+purple50 = "#d4bbff"
+purple60 = "#e8daff"
+
+red30 = "#ff8389"
+red40 = "#ffa4a9"
+red50 = "#ffd7d9"
+
+yellow30 = "#f1c21b"
+yellow40 = "#fddc69"
+yellow50 = "#fff1d2"
