@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+function path() {
+	printf "$HOME/.config/helix/themes/oxygen-%s.toml" "$1";
+}
+
+if [[ "$(tty)" =~ "/dev/tty" ]]; then
+	version=16;
+else
+	version=18;
+fi
+
+src="$(path "$version")";
+dst="$(path 'x')";
+
+ln -sf "$src" "$dst";
