@@ -1,7 +1,6 @@
 theme = "oxygen-x"
 
 [editor]
-trim-trailing-whitespace = true
 auto-pairs = false
 rulers = [80, 120]
 
@@ -15,86 +14,591 @@ insert = "bar"
 # render = true
 
 [keys.normal]
-q = "move_next_sub_word_start"
+# ===== ARROW KEYS =====
 
-D = "delete_selection_noyank"
-C = "change_selection_noyank"
+"left" = "move_char_left"
+"C-left" = "goto_line_end_newline"
+"C-A-left" = "goto_line_end"
 
-X = "extend_line_above"
+"up" = "move_visual_line_up"
+"C-up" = "page_up"
 
-Y = "yank_to_clipboard"
+"right" = "move_char_right"
+"C-right" = "goto_line_start"
+"C-A-right" = "goto_first_nonwhitespace"
 
-#h = "move_char_left"
-#j = "move_visual_line_up"
-#k = "move_visual_line_down"
-#l = "move_char_right"
+"down" = "move_visual_line_down"
+"C-down" = "page_down"
 
-z = "copy_selection_on_next_line"
-Z = "copy_selection_on_prev_line"
+# ===== NUMPAD =====
 
-# These didn't seem to work in select mode. Do I need to create mapping for each of again, in concert with `v`?
+# "/", "*", "-" handled below
 
-#H = "goto_line_start"
-#J = "goto_first_nonwhitespace"
-# K =
-#L = "goto_line_end"
+"home" = "goto_line_start"
+"A-home" = "goto_first_nonwhitespace"
 
-#C-h = "move_prev_word_start"
-#C-j = "move_prev_word_end"
-#C-k = "move_next_word_start"
-#C-l = "move_next_word_end"
+"end" = "goto_line_end_newline"
+"A-end" = "goto_line_end"
 
-#C-H = "move_prev_long_word_start"
-#C-J = "move_prev_long_word_end"
-#C-K = "move_next_long_word_start"
-#C-L = "move_next_long_word_end"
+"pageup" = "page_up"
 
-# Don't plan on using these. Just for consistency with regular j/k
+"pagedown" = "page_down"
+
+7 = "move_prev_long_word_start"
+8 = "move_next_long_word_start"
+9 = "move_next_long_word_end"
+
+4 = "move_prev_word_start"
+5 = "move_next_word_start"
+6 = "move_next_word_end"
+
+1 = "no_op"
+2 = "no_op"
+3 = "no_op"
+
+0 = "no_op"
+# "." handled below
+
+# "+" handled below
+# "ret" handled below
+
+# ===== MAIN ROW 0 =====
+
+F1 = "hover"
+
+F2 = "no_op"
+S-F2 = "no_op"
+
+F3 = "goto_definition"
+S-F3 = "goto_reference"
+
+F4 = "goto_implementation"
+
+F5 = "format_selections"
+
+F6 = "rename_symbol"
+
+F7 = "no_op"
+
+F8 = "no_op"
+
+F9 = "no_op"
+
+F10 = "no_op"
+
+F11 = "no_op"
+
+F12 = "no_op"
+
+"del" = "wclose"
+"S-del" = "wonly"
+
+# num lock not rebindable
+
+# ===== MAIN ROW 1 =====
+
+"`" = "switch_to_lowercase"
+"~" = "switch_to_uppercase"
+"A-`" = "switch_case"
+
+# 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 handled above
+"!" = "record_macro"
+
+"@" = "select_register"
+
+"#" = "toggle_comments"
+
+"$" = "replay_macro"
+
+"%" = ":reflow"
+
+"^" = "join_selections"
+
+"&" = "align_selections"
+
+"*" = "reverse_selection_contents"
+
+"(" = "rotate_selections_backward"
+"A-(" = "rotate_selection_contents_backward"
+
+")" = "rotate_selections_forward"
+"A-)" = "rotate_selection_contents_forward"
+
+# For symmetry with numpad "+"
+minus = "shrink_selection"
+# For symmetry with "="
+"_" = "shrink_selection"
+A-minus = "decrement"
+
+"=" = "no_op"
+"+" = "expand_selection"
+"A-=" = "increment"
+
+"backspace" = "undo"
+"S-backspace" = "redo"
+C-backspace = "earlier"
+C-S-backspace = "later"
+
+# ===== MAIN ROW 2 =====
+
+"tab" = "indent"
+"S-tab" = "unindent"
+
+q = "rotate_view_reverse"
+Q = "goto_previous_buffer"
+
+w = "open_above"
+W = ["goto_file_start", "open_above"]
+
+e = "rotate_view"
+E = "goto_next_buffer"
+
+r = "replace"
+R = "no_op"
+
+t = "find_till_char"
+T = "till_prev_char"
+
+y = "no_op"
+Y = "no_op"
+
+u = "select_all"
+U = "no_op"
+
+o = "select_textobject_around"
+O = "no_op"
+
+i = "select_textobject_inner"
+I = "no_op"
+
+# p handled below
+P = "no_op"
+
+# Not touching [ ] to leave original bindings intact for now
+
+"{" = "no_op"
+
+"}" = "no_op"
+
+
+"\\" = "command_mode"
+"|" = "shell_pipe"
+"A-|" = "shell_append_output"
+
+# ===== MAIN ROW 3 =====
+
+a = "insert_mode"
+A = "insert_at_line_start"
+
+s = "open_below"
+S = ["goto_file_end", "open_below"]
+
+d = "append_mode"
+D = "insert_at_line_end"
+
+f = "find_next_char"
+F = "find_prev_char"
+
+# g handled below
+
+h = "trim_selections"
+H = "no_op"
+
+j = "flip_selections"
+J = "ensure_selections_forward"
+
+k = "merge_selections"
+K = "merge_consecutive_selections"
+
+l = "extend_line_below"
+L = "extend_line_above"
+A-l = "extend_to_line_bounds"
+A-L = "shrink_to_line_bounds"
+
+";" = "copy_selection_on_next_line"
+":" = "copy_selection_on_prev_line"
+
+"'" = "keep_primary_selection"
+"\"" = "collapse_selection"
+
+"ret" = "select_mode"
+
+# ===== MAIN ROW 4 =====
+
+z = "change_selection_noyank"
+Z = "change_selection"
+
+x = "delete_selection_noyank"
+X = "delete_selection"
+
+c = "yank"
+C = "yank_joined"
+A-c =  ":yank-diagnostic"
+
+v = "paste_after"
+V = "paste_before"
+A-v = "replace_with_yanked"
+
+b = "delete_char_backward"
+B = "no_op"
+
+n = "no_op"
+N = "no_op"
+
+m = "select_regex"
+M = "split_selection"
+# How is this differnet from shrink_to_line_bounds?
+A-M = "split_selection_on_newline"
+
+"," = "repeat_last_motion"
+"<" = "search_prev"
+
+# It appears that "." cannot be rebound. It repeats the last insertion.
+">" = "search_next"
+
+"/" = "search"
+"?" = "rsearch"
+"A-/" = "search_selection"
+"A-?" = "no_op"
+
+# ===== ETC =====
+
+[keys.normal.p]
+p = "match_brackets"
+a = "surround_add"
+r = "surround_replace"
+x = "surround_delete"
+
 [keys.normal.g]
-j = "move_line_up"
-k = "move_line_down"
+# Something strange is going on here.
+# It doesn't appear to be possible to disentangle "goto_file_start" from
+# "goto_line", so g.l is redundant with g.g.
+g = "goto_file_start"
+G = "goto_file_end"
+l = "goto_line"
+k = "no_op"
+# Lots of default bindings that ought to be optimized or de-cluttered
 
 
-[keys.normal.w]
-i = "@miw"
-a = "@maw"
+[keys.normal.space]
+c = "yank_to_clipboard"
+C = "yank_joined_to_clipboard"
 
-[keys.normal.W]
-i = "@miW"
-a = "@maW"
+v = "paste_clipboard_after"
+V = "paste_clipboard_before"
+A-v = "replace_selections_with_clipboard"
 
-[keys.normal."("]
-s = "@ms("
-r = "@mr("
-d = "@md("
-i = "@mi("
-a = "@ma("
+y = "no_op"
+Y = "no_op"
+p = "no_op"
+P = "no_op"
 
-[keys.normal."["]
-s = "@ms["
-r = "@mr["
-d = "@md["
-i = "@mi["
-a = "@ma["
+# This doesn't work
+# "g.g" = "goto_file_start"
+# This does
+# g = { g = "goto_file_start" }
 
-[keys.normal."{"]
-s = "@ms{"
-r = "@mr{"
-d = "@md{"
-i = "@mi{"
-a = "@ma{"
+#[keys.normal."["]
+#p = "goto_prev_paragraph"
+#w = "goto_window_top"
+#b = "goto_previous_buffer"
+#c = "goto_prev_change"
+#d = "goto_prev_diag"
+#"#" = "goto_prev_comment"
+#F = "goto_prev_function"
+#P = "goto_prev_parameter"
+#T = "goto_prev_test"
+#C = "goto_prev_class"
+#
+#[keys.normal."{"]
+#d = "goto_first_diag"
+#c = "goto_first_change"
+#
+#
+#[keys.normal."]"]
+#p = "goto_next_paragraph"
+#w = "goto_window_bottom"
+#b = "goto_next_buffer"
+#c = "goto_next_change"
+#d = "goto_next_diag"
+#"#" = "goto_next_comment"
+#F = "goto_next_function"
+#P = "goto_next_parameter"
+#T = "goto_next_test"
+#C = "goto_next_class"
 
-[keys.normal."\""]
-s = "@ms\""
-r = "@mr\""
-d = "@md\""
-i = "@mi\""
-a = "@ma\""
+# [keys.normal.i]
+# i = "@miw"
+# I = "@miW"
+# "(" = "@mi("
+# "[" = "@mi["
+# "{" = "@mi{"
+# "<" = "@mi<lt>"
 
-[keys.normal."'"]
-s = "@ms'"
-r = "@mr'"
-d = "@md'"
-i = "@mi'"
-a = "@ma'"
+[keys.select]
+# ===== ARROW KEYS =====
 
+"left" = "extend_char_left"
+"C-left" = "extend_to_line_end_newline"
+"C-A-left" = "extend_to_line_end"
+
+"up" = "extend_visual_line_up"
+"C-up" = "no_op"
+
+"right" = "extend_char_right"
+"C-right" = "extend_to_line_start"
+"C-A-right" = "extend_to_first_nonwhitespace"
+
+"down" = "extend_visual_line_down"
+"C-down" = "no_op"
+
+# ===== NUMPAD =====
+
+# "/", "*", "-" handled below
+
+"home" = "extend_to_line_start"
+"A-home" = "extend_to_first_nonwhitespace"
+
+"end" = "extend_to_line_end_newline"
+"A-end" = "extend_to_line_end"
+
+"pageup" = "no_op"
+
+"pagedown" = "no_op"
+
+7 = "extend_prev_long_word_start"
+8 = "extend_next_long_word_start"
+9 = "extend_next_long_word_end"
+
+4 = "extend_prev_word_start"
+5 = "extend_next_word_start"
+6 = "extend_next_word_end"
+
+1 = "no_op"
+2 = "no_op"
+3 = "no_op"
+# "." handled below
+
+# "+" handled below
+# "ret" handled below
+
+# ===== MAIN ROW 0 =====
+
+F1 = "hover"
+
+F2 = "no_op"
+S-F2 = "no_op"
+
+F3 = "select_references_to_symbol_under_cursor"
+S-F3 = "no_op"
+
+F4 = "no_op"
+
+F5 = "format_selections"
+
+F6 = "rename_symbol"
+
+F7 = "no_op"
+
+F8 = "no_op"
+
+F9 = "no_op"
+
+F10 = "no_op"
+
+F11 = "no_op"
+
+F12 = "no_op"
+
+# "del" = "wclose"
+# "S-del" = "wonly"
+
+# num lock not rebindable
+
+# ===== MAIN ROW 1 =====
+
+"`" = "switch_to_lowercase"
+"~" = "switch_to_uppercase"
+"A-`" = "switch_case"
+
+# 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 handled above
+"!" = "no_op"
+
+"@" = "select_register"
+
+# Select in comment?
+"#" = "no_op"
+
+"$" = "no_op"
+
+"%" = ":reflow"
+
+"^" = "join_selections"
+
+"&" = "align_selections"
+
+"*" = "reverse_selection_contents"
+
+"(" = "rotate_selections_backward"
+"A-(" = "rotate_selection_contents_backward"
+
+")" = "rotate_selections_forward"
+"A-)" = "rotate_selection_contents_forward"
+
+# For symmetry with numpad "+"
+minus = "shrink_selection"
+# For symmetry with "="
+"_" = "shrink_selection"
+A-minus = "decrement"
+
+"=" = "no_op"
+"+" = "expand_selection"
+"A-=" = "increment"
+
+"backspace" = "undo"
+"S-backspace" = "redo"
+C-backspace = "earlier"
+C-S-backspace = "later"
+
+# ===== MAIN ROW 2 =====
+
+"tab" = "no_op"
+"S-tab" = "no_op"
+
+q = "rotate_view_reverse"
+Q = "goto_previous_buffer"
+
+w = "open_above"
+W = ["goto_file_start", "open_above"]
+
+e = "rotate_view"
+E = "goto_next_buffer"
+
+r = "replace"
+R = "no_op"
+
+t = "extend_till_char"
+T = "extend_till_prev_char"
+
+y = "no_op"
+Y = "no_op"
+
+u = "select_all"
+U = "no_op"
+
+o = "select_textobject_around"
+O = "no_op"
+
+i = "select_textobject_inner"
+I = "no_op"
+
+# "P" handled below
+
+# Not touching [ { ] } to leave original bindings intact for now
+
+"\\" = "command_mode"
+"|" = "shell_pipe"
+
+# ===== MAIN ROW 3 =====
+
+a = "insert_mode"
+A = "insert_at_line_start"
+
+s = "open_below"
+S = ["goto_file_end", "open_below"]
+
+d = "append_mode"
+D = "insert_at_line_end"
+
+f = "extend_next_char"
+F = "extend_prev_char"
+
+# g handled below
+
+h = "trim_selections"
+H = "no_op"
+
+j = "flip_selections"
+J = "ensure_selections_forward"
+
+k = "merge_selections"
+K = "merge_consecutive_selections"
+
+l = "extend_line_below"
+L = "extend_line_above"
+A-l = "extend_to_line_bounds"
+A-L = "shrink_to_line_bounds"
+
+";" = "copy_selection_on_next_line"
+":" = "copy_selection_on_prev_line"
+
+"'" = "keep_primary_selection"
+"\"" = "collapse_selection"
+
+"ret" = "exit_select_mode"
+
+# ===== MAIN ROW 4 =====
+
+z = "change_selection_noyank"
+Z = "change_selection"
+
+x = "delete_selection_noyank"
+X = "delete_selection"
+
+c = "yank"
+C = "yank_joined"
+A-c =  ":yank-diagnostic"
+
+v = "paste_after"
+V = "paste_before"
+A-v = "replace_with_yanked"
+
+b = "delete_char_backward"
+B = "no_op"
+
+n = "no_op"
+N = "no_op"
+
+m = "select_regex"
+M = "split_selection"
+A-M = "split_selection_on_newline"
+
+"," = "repeat_last_motion"
+"<" = "extend_search_prev"
+
+# It appears that "." cannot be rebound. It repeats the last insertion.
+">" = "extend_search_next"
+
+"/" = "search"
+"?" = "rsearch"
+"A-/" = "search_selection"
+"A-?" = "no_op"
+
+# ===== ETC =====
+
+[keys.select.p]
+p = "match_brackets"
+a = "surround_add"
+r = "surround_replace"
+x = "surround_delete"
+
+[keys.select.g]
+g = "no_op"
+G = "no_op"
+# Doesn't appear to exist? But g.g does this
+# l = "extend_to_line"
+k = "no_op"
+
+
+[keys.select.space]
+c = "yank_to_clipboard"
+C = "yank_joined_to_clipboard"
+
+v = "paste_clipboard_after"
+V = "paste_clipboard_before"
+A-v = "replace_selections_with_clipboard"
+
+y = "no_op"
+Y = "no_op"
+p = "no_op"
+P = "no_op"
