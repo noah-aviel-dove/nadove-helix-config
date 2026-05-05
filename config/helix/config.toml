@@ -1,6 +1,7 @@
 theme = "oxygen-x"
 
 [editor]
+trim-trailing-whitespace = true
 auto-pairs = false
 rulers = [80, 120]
 
@@ -52,9 +53,9 @@ insert = "bar"
 5 = "move_next_word_start"
 6 = "move_next_word_end"
 
-1 = "no_op"
-2 = "no_op"
-3 = "no_op"
+1 = "move_prev_sub_word_start"
+2 = "move_next_sub_word_start"
+3 = "move_next_sub_word_end"
 
 0 = "no_op"
 # "." handled below
@@ -259,7 +260,7 @@ A-M = "split_selection_on_newline"
 "/" = "search"
 "?" = "rsearch"
 "A-/" = "search_selection"
-"A-?" = "no_op"
+"A-?" = "search_selection_detect_word_boundaries"
 
 # ===== ETC =====
 
@@ -276,7 +277,7 @@ x = "surround_delete"
 g = "goto_file_start"
 G = "goto_file_end"
 l = "goto_line"
-k = "no_op"
+k = "goto_column"
 # Lots of default bindings that ought to be optimized or de-cluttered
 
 
@@ -374,9 +375,11 @@ P = "no_op"
 5 = "extend_next_word_start"
 6 = "extend_next_word_end"
 
-1 = "no_op"
-2 = "no_op"
-3 = "no_op"
+1 = "extend_prev_sub_word_start"
+2 = "extend_next_sub_word_start"
+3 = "extend_next_sub_word_end"
+
+0 = "no_op"
 # "." handled below
 
 # "+" handled below
@@ -572,7 +575,7 @@ A-M = "split_selection_on_newline"
 "/" = "search"
 "?" = "rsearch"
 "A-/" = "search_selection"
-"A-?" = "no_op"
+"A-?" = "search_selection_detect_word_boundaries"
 
 # ===== ETC =====
 
@@ -583,11 +586,11 @@ r = "surround_replace"
 x = "surround_delete"
 
 [keys.select.g]
-g = "no_op"
-G = "no_op"
+g = "extend_to_file_start"
+G = "extend_to_file_end"
 # Doesn't appear to exist? But g.g does this
 # l = "extend_to_line"
-k = "no_op"
+k = "extend_to_column"
 
 
 [keys.select.space]
